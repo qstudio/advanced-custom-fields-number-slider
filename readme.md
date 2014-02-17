@@ -38,10 +38,10 @@ This add-on will work with:
 ## Screenshots ##
 
 ###1. Sliding Number Selector on edit screen###
-[missing image]
+![ScreenShot](http://s.w.org/plugins/advanced-custom-fields-number-slider/screenshot-1.png?r=859692)
 
 ###2. Configure Number Slider Field in ACF###
-[missing image]
+![ScreenShot](http://s.w.org/plugins/advanced-custom-fields-number-slider/screenshot-2.png?r=859692)
 
 
 ## Frequently Asked Questions  ##
