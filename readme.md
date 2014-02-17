@@ -1,35 +1,3 @@
-<br />
-<b>Deprecated</b>:  Function ereg() is deprecated in <b>C:\xampp\htdocs\git\index.php</b> on line <b>154</b><br />
-<br />
-<b>Deprecated</b>:  Function ereg() is deprecated in <b>C:\xampp\htdocs\git\index.php</b> on line <b>154</b><br />
-<br />
-<b>Deprecated</b>:  Function ereg() is deprecated in <b>C:\xampp\htdocs\git\index.php</b> on line <b>154</b><br />
-<br />
-<b>Deprecated</b>:  Function ereg() is deprecated in <b>C:\xampp\htdocs\git\index.php</b> on line <b>154</b><br />
-<br />
-<b>Deprecated</b>:  Function ereg() is deprecated in <b>C:\xampp\htdocs\git\index.php</b> on line <b>154</b><br />
-<br />
-<b>Deprecated</b>:  Function ereg() is deprecated in <b>C:\xampp\htdocs\git\index.php</b> on line <b>154</b><br />
-<br />
-<b>Deprecated</b>:  Function ereg() is deprecated in <b>C:\xampp\htdocs\git\index.php</b> on line <b>154</b><br />
-<br />
-<b>Deprecated</b>:  Function ereg() is deprecated in <b>C:\xampp\htdocs\git\index.php</b> on line <b>154</b><br />
-<br />
-<b>Deprecated</b>:  Function ereg() is deprecated in <b>C:\xampp\htdocs\git\index.php</b> on line <b>154</b><br />
-<br />
-<b>Deprecated</b>:  Function ereg() is deprecated in <b>C:\xampp\htdocs\git\index.php</b> on line <b>154</b><br />
-<br />
-<b>Deprecated</b>:  Function ereg() is deprecated in <b>C:\xampp\htdocs\git\index.php</b> on line <b>154</b><br />
-<br />
-<b>Deprecated</b>:  Function ereg() is deprecated in <b>C:\xampp\htdocs\git\index.php</b> on line <b>154</b><br />
-<br />
-<b>Deprecated</b>:  Function ereg() is deprecated in <b>C:\xampp\htdocs\git\index.php</b> on line <b>154</b><br />
-<br />
-<b>Deprecated</b>:  Function ereg() is deprecated in <b>C:\xampp\htdocs\git\index.php</b> on line <b>154</b><br />
-<br />
-<b>Deprecated</b>:  Function ereg() is deprecated in <b>C:\xampp\htdocs\git\index.php</b> on line <b>154</b><br />
-<br />
-<b>Deprecated</b>:  Function ereg() is deprecated in <b>C:\xampp\htdocs\git\index.php</b> on line <b>154</b><br />
 # Advanced Custom Fields: Number Slider #
 **Contributors:** qlstudio  
 **Tags:** acf, advanced custom field, number, slider, slide, select, integer  
