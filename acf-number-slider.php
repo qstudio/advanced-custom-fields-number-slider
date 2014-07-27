@@ -9,6 +9,9 @@ Author:         Q Studio
 Author URI:     http://www.qstudio.us
 License:        GPLv2 or later
 License URI:    http://www.gnu.org/licenses/gpl-2.0.html
+
+Version 5 compatibiltity added by chrisgoddard
+
 */
 
 /*
@@ -36,6 +39,8 @@ class acf_field_number_slider_plugin
 
         // version 3-
         add_action( 'init', array( $this, 'init' ));
+        
+        add_action('acf/include_field_types', array($this, 'include_field_types_number_slider'));	
     }
 
 
@@ -53,6 +58,7 @@ class acf_field_number_slider_plugin
             register_field( 'acf_field_number_slider', dirname(__FILE__) . '/number-slider-v3.php' );
 
         }
+
     }
 
     /*
@@ -66,6 +72,13 @@ class acf_field_number_slider_plugin
     {
         include_once('number-slider-v4.php');
     }
+    
+    function include_field_types_number_slider( $version ) {
+	
+		include_once('number-slider-v5.php');
+		
+	}
+
 
 }
 
