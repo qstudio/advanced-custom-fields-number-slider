@@ -61,7 +61,7 @@ var __slice = [].slice,
         });
       }
       this.dragger.css({
-        marginTop: this.dragger.outerWidth() / -2,
+        marginTop: this.dragger.outerHeight() / -2,
         marginLeft: this.dragger.outerWidth() / -2
       });
       this.track.mousedown(function(e) {
@@ -106,7 +106,6 @@ var __slice = [].slice,
       }
       this.setSliderPositionFromValue(this.value);
       ratio = this.valueToRatio(this.value);
-      
       this.input.trigger("slider:ready", {
         value: this.value,
         ratio: ratio,
@@ -306,11 +305,8 @@ var __slice = [].slice,
     return SimpleSlider;
 
   })();
-  
-  // direct method ##
   $.extend($.fn, {
     simpleSlider: function() {
-      //console.log("here..?");
       var params, publicMethods, settingsOrMethod;
       settingsOrMethod = arguments[0], params = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
       publicMethods = ["setRatio", "setValue"];
@@ -326,47 +322,9 @@ var __slice = [].slice,
       });
     }
   });
-  
   /*
-  // indirect method ##
-  return $(function() {
-    return $("[data-slider]").each(function() {
-      var $el, allowedValues, settings, x;
-      $el = $(this);
-      settings = {};
-      allowedValues = $el.data("slider-values");
-      if (allowedValues) {
-        settings.allowedValues = (function() {
-          var _i, _len, _ref, _results;
-          _ref = allowedValues.split(",");
-          _results = [];
-          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-            x = _ref[_i];
-            _results.push(parseFloat(x));
-          }
-          return _results;
-        })();
-      }
-      if ($el.data("slider-range")) {
-        settings.range = $el.data("slider-range").split(",");
-      }
-      if ($el.data("slider-step")) {
-        settings.step = $el.data("slider-step");
-      }
-      settings.snap = $el.data("slider-snap");
-      settings.equalSteps = $el.data("slider-equal-steps");
-      if ($el.data("slider-theme")) {
-        settings.theme = $el.data("slider-theme");
-      }
-      if ($el.attr("data-slider-highlight")) {
-        settings.highlight = $el.data("slider-highlight");
-      }
-      if ($el.data("slider-animate") != null) {
-        settings.animate = $el.data("slider-animate");
-      }
-      return $el.simpleSlider(settings);
-    });
+return $(function() {
+    return 
   });
-  */
-  
+*/
 })(this.jQuery || this.Zepto, this);
