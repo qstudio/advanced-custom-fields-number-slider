@@ -4,18 +4,16 @@
 Plugin Name:    Advanced Custom Fields: Number Slider
 Plugin URI:     http://www.qstudio.us/plugins/
 Description:    Number Slider field for Advanced Custom Fields
-Version:        0.3.7
+Version:        0.4.1
 Author:         Q Studio
 Author URI:     http://www.qstudio.us
 License:        GPLv2 or later
 License URI:    http://www.gnu.org/licenses/gpl-2.0.html
-
-Version 5 compatibiltity added by chrisgoddard
-
 */
 
 /*
  * This plugin uses the Simpler Slider jQuery library by James Smith - http://loopj.com/jquery-simple-slider/
+ * Version 5 compatibiltity added by chrisgoddard
  */
 
 class acf_field_number_slider_plugin
@@ -29,6 +27,7 @@ class acf_field_number_slider_plugin
 	*/
     function __construct()
     {
+        
         // set text domain
         $domain = 'acf-number_slider';
         $mofile = trailingslashit( dirname(__FILE__)) . 'lang/' . $domain . '-' . get_locale() . '.mo';
@@ -41,6 +40,7 @@ class acf_field_number_slider_plugin
         add_action( 'init', array( $this, 'init' ));
         
         add_action('acf/include_field_types', array($this, 'include_field_types_number_slider'));	
+        
     }
 
 
@@ -75,9 +75,9 @@ class acf_field_number_slider_plugin
     
     function include_field_types_number_slider( $version ) {
 	
-		include_once('number-slider-v5.php');
+        include_once('number-slider-v5.php');
 		
-	}
+    }
 
 
 }

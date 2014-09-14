@@ -333,7 +333,6 @@ class acf_field_number_slider extends acf_field {
 	*  @param	n/a
 	*  @return	n/a
 	*/
-
 	/*
 	
 	function field_group_admin_head() {
@@ -357,8 +356,6 @@ class acf_field_number_slider extends acf_field {
 	*  @param	$field (array) the field array holding all the field options
 	*  @return	$value
 	*/
-	
-	
 	function load_value( $value, $post_id, $field ) {
 		
 		 return (int)$value;
@@ -381,15 +378,13 @@ class acf_field_number_slider extends acf_field {
 	*  @param	$field (array) the field array holding all the field options
 	*  @return	$value
 	*/
-	
-	
 	function update_value( $value, $post_id, $field ) {
-		
-			logger($field['name']);
-			logger($value);
-		
-		 return (int)$value;
-		
+
+            #logger($field['name']);
+            #logger($value);
+
+            return (int)$value;
+
 	}
 	
 	
@@ -565,5 +560,3 @@ class acf_field_number_slider extends acf_field {
 
 // create field
 new acf_field_number_slider();
-
-?>
