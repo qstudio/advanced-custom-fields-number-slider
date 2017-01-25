@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ACF: Number Slider\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-25 15:06+0000\n"
+"PO-Revision-Date: 2017-01-25 15:07+0000\n"
+"Last-Translator: Pedro Mendonça <ped.gaspar@gmail.com>\n"
+"Language-Team: Pedro Mendonça <ped.gaspar@gmail.com>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;"
+"esc_html_x:1,2c\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: acf-number-slider.php\n"
+"X-Generator: Poedit 1.8.11\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: number-slider-v3.php:32 number-slider-v4.php:26 number-slider-v5.php:34
+msgid "Number Slider"
+msgstr "Slider numérico"
+
+#: number-slider-v3.php:35 number-slider-v4.php:30
+msgid "Choose a Number"
+msgstr "Escolha um número"
+
+#: number-slider-v3.php:126 number-slider-v4.php:69 number-slider-v5.php:101
+msgid "Units"
+msgstr "Unidades"
+
+#: number-slider-v3.php:127 number-slider-v4.php:70 number-slider-v5.php:102
+msgid "Enter the units to measure by"
+msgstr "Insira as unidades de medida"
+
+#: number-slider-v3.php:145 number-slider-v4.php:85 number-slider-v5.php:116
+msgid "Minimum Value"
+msgstr "Valor mínimo"
+
+#: number-slider-v3.php:146 number-slider-v4.php:86 number-slider-v5.php:117
+msgid "Enter the minimum value to allow"
+msgstr "Insira o valor mínimo permitido"
+
+#: number-slider-v3.php:164 number-slider-v4.php:101 number-slider-v5.php:123
+msgid "Maximum Value"
+msgstr "Valor máximo"
+
+#: number-slider-v3.php:165 number-slider-v4.php:102 number-slider-v5.php:124
+msgid "Enter the maximum value to allow"
+msgstr "Insira o valor máximo permitido"
+
+#: number-slider-v3.php:183 number-slider-v4.php:117 number-slider-v5.php:130
+msgid "Increment Value"
+msgstr "Valor incremental"
+
+#: number-slider-v3.php:184 number-slider-v4.php:118 number-slider-v5.php:131
+msgid "Enter the value to increment by"
+msgstr "Insira o valor a incrementar"
+
+#: number-slider-v4.php:27
+msgid "jQuery"
+msgstr "jQuery"
+
+#: number-slider-v5.php:63
+msgid "Error! Please enter a higher value"
+msgstr "Erro! Por favor insira um valor superior."
+
+#: number-slider-v5.php:108
+msgid "Default Value"
+msgstr "Valor por omissão"
+
+#: number-slider-v5.php:109
+msgid "Enter the default value"
+msgstr "Insira o valor por omissão"
+
+#. Plugin Name of the plugin/theme
+msgid "Advanced Custom Fields: Number Slider"
+msgstr "Advanced Custom Fields: Number Slider"
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.qstudio.us/plugins/"
+msgstr "http://www.qstudio.us/plugins/"
+
+#. Description of the plugin/theme
+msgid "Number Slider field for Advanced Custom Fields"
+msgstr "Campo de slider numérico para o Advanced Custom Fields"
+
+#. Author of the plugin/theme
+msgid "Q Studio"
+msgstr "Q Studio"
+
+#. Author URI of the plugin/theme
+msgid "http://www.qstudio.us"
+msgstr "http://www.qstudio.us"
+
+#~ msgid "Date and Time Picker"
+#~ msgstr "Birač datuma i vremena"
