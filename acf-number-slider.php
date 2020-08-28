@@ -4,7 +4,7 @@
 Plugin Name:    Advanced Custom Fields: Number Slider
 Plugin URI:     http://www.qstudio.us/plugins/
 Description:    Number Slider field for Advanced Custom Fields
-Version:        0.4.2
+Version:        0.5.5
 Author:         Q Studio
 Author URI:     http://www.qstudio.us
 License:        GPLv2 or later

@@ -1,12 +1,12 @@
 {
-	"name": "add-user-metadata",
-	"version": "0.5.12",
-	"description": "Q Plugins ~ Import User Meta Data from CSV",
+	"name": "advanced-custom-fields-number-slider",
+	"version": "0.5.5",
+	"description": "Q Plugins ~ Advanced Custom Fields: Number Slider",
 	"author": "Q Studio",
 	"homepage": "https://qstudio.us",
 	"repository": {
 		"type": "git",
-		"url": "qstudio/add-user-metadata"
+		"url": "qstudio/advanced-custom-fields-number-slider"
 	},
-	"license": "GPL-3.0-or-later",
+	"license": "GPL-3.0-or-later"
 }
