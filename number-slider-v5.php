@@ -156,18 +156,18 @@ class acf_field_number_slider extends acf_field {
 	function render_field( $field ) {
 		
 		
-	 // create a random ID ## 
+	 	// create a random ID ## 
             
-            $default = ( intval($field['default_value'] ) < intval($field['slider_min_value'] ) ) ? intval($field['default_value']) : intval($field['slider_min_value']);
-                        
-            $value = (isset($field['value'])) ? intval($field['value']) : $default;
-                        
-            ?>
-            <input type="text" value="<?php echo $value; ?>" name="<?php echo $field['name'] ?> " class="simple_slider" title="<?php echo $field['label'] ?>" data-slider="true" data-slider-highlight="true" data-slider-range="<?php echo $field['slider_min_value'] ?>,<?php echo $field['slider_max_value']; ?>" data-slider-step="<?php echo $field['increment_value']; ?>" data-slider-snap="true" data-units="<?php echo $field['slider_units']; ?>"/>
-            
-            <p class="description slide"><?php echo $value; ?><?php echo $field['slider_units']; ?></p>
-        
-			<?php
+		$default = ( intval($field['default_value'] ) < intval($field['slider_min_value'] ) ) ? intval($field['default_value']) : intval($field['slider_min_value']);
+					
+		$value = (isset($field['value'])) ? intval($field['value']) : $default;
+					
+?>
+		<input type="text" value="<?php echo $value; ?>" name="<?php echo $field['name'] ?> " class="simple_slider" title="<?php echo $field['label'] ?>" data-slider="true" data-slider-highlight="true" data-slider-range="<?php echo $field['slider_min_value'] ?>,<?php echo $field['slider_max_value']; ?>" data-slider-step="<?php echo $field['increment_value']; ?>" data-slider-snap="true" data-units="<?php echo $field['slider_units']; ?>"/>
+		
+		<p class="description slide"><?php echo $value; ?><?php echo $field['slider_units']; ?></p>
+	
+<?php
             
         
 	}
@@ -192,7 +192,7 @@ class acf_field_number_slider extends acf_field {
 		
 		$dir = plugin_dir_url( __FILE__ );
 		
-	/*
+		/*
 	
 		// register & include JS
 		wp_register_script( 'acf-input-number_slider', "{$dir}js/input.js" );
@@ -202,7 +202,7 @@ class acf_field_number_slider extends acf_field {
 		// register & include CSS
 		wp_register_style( 'acf-input-number_slider', "{$dir}css/input.css" ); 
 		wp_enqueue_style('acf-input-number_slider');
-*/
+		*/
 		
 		
 	  // add JS ##
