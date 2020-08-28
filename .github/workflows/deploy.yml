@@ -13,4 +13,4 @@ jobs:
       env:
         SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
         SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
-        SLUG: add-user-metadata # optional, remove if GitHub repo name matches SVN slug, including capitalizat
+        SLUG: advanced-custom-fields-number-slider # optional, remove if GitHub repo name matches SVN slug, including capitalizat
