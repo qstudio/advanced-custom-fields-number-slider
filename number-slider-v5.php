@@ -276,7 +276,7 @@ class acf_field_number_slider extends acf_field {
 	
 	function format_value( $value, $post_id, $field ) {
 
-		\willow\core\helper::log( $field );
+		// \willow\core\helper::log( $field );
 
 		// check if we need to append a value ##
 		$append = isset( $field['slider_append'] ) ? $field['slider_append'] : '';
