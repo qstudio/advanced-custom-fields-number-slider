@@ -1,14 +1,15 @@
 <?php
 
 /*
-Plugin Name:    Advanced Custom Fields: Number Slider
-Plugin URI:     http://www.qstudio.us/plugins/
-Description:    Number Slider field for Advanced Custom Fields
-Version:        0.5.6
-Author:         Q Studio
-Author URI:     http://www.qstudio.us
-License:        GPLv2 or later
-License URI:    http://www.gnu.org/licenses/gpl-2.0.html
+ * Plugin Name:    		Advanced Custom Fields: Number Slider
+ * Plugin URI:     		https://qstudio.us
+ * Description:    		Number Slider field for Advanced Custom Fields
+ * Version:        		0.5.7
+ * Author:         		Q Studio
+ * Author URI:     		https://qstudio.us
+ * License:       	 	GPLv3 or later
+ * License URI:    		http://www.gnu.org/licenses/gpl-2.0.html
+ * GitHub Plugin URI: 	qstudio/advanced-custom-fields-number-slider
 */
 
 /*
@@ -16,8 +17,7 @@ License URI:    http://www.gnu.org/licenses/gpl-2.0.html
  * Version 5 compatibiltity added by chrisgoddard
  */
 
-class acf_field_number_slider_plugin
-{
+class acf_field_number_slider_plugin{
 	
     /*
 	*  Construct
@@ -25,20 +25,19 @@ class acf_field_number_slider_plugin
 	*  @description:
 	*  @since: 0.1
 	*/
-    function __construct()
-    {
+    public function __construct(){
         
         // set text domain
-        $domain = 'acf-number_slider';
-        $mofile = trailingslashit( dirname(__FILE__)) . 'lang/' . $domain . '-' . get_locale() . '.mo';
-        load_textdomain( $domain, $mofile );
+        $mo_file = trailingslashit( dirname(__FILE__)) . 'lang/' . 'acf-number_slider' . '-' . get_locale() . '.mo';
+        load_textdomain( 'acf-number_slider', $mo_file );
 
         // version 4+
         add_action( 'acf/register_fields', array( $this, 'register_fields' ) );
 
         // version 3-
         add_action( 'init', array( $this, 'init' ));
-        
+		
+		// add config ##
         add_action('acf/include_field_types', array($this, 'include_field_types_number_slider'));	
         
     }
@@ -51,8 +50,8 @@ class acf_field_number_slider_plugin
     *  @since: 3.6
     *  @created: 1/04/13
     */
-    function init()
-    {
+    public function init(){
+
         if ( function_exists('register_field') ) {
             
             register_field( 'acf_field_number_slider', dirname(__FILE__) . '/number-slider-v3.php' );
@@ -61,6 +60,7 @@ class acf_field_number_slider_plugin
 
     }
 
+	
     /*
     *  register_fields
     *
@@ -68,12 +68,13 @@ class acf_field_number_slider_plugin
     *  @since: 3.6
     *  @created: 1/04/13
     */
-    function register_fields()
-    {
-        include_once('number-slider-v4.php');
+	public function register_fields(){
+
+		include_once('number-slider-v4.php');
+		
     }
     
-    function include_field_types_number_slider( $version ) {
+    public function include_field_types_number_slider( $version ) {
 	
         include_once('number-slider-v5.php');
 		

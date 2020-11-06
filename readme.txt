@@ -1,10 +1,10 @@
 === Advanced Custom Fields: Number Slider ===
-Contributors: qlstudio
-Tags: acf, advanced custom field, number, slider, slide, select, integer
-Requires at least: 4.0.0
-Tested up to: 5.5.0
-Stable tag: 0.5.6
-License: GPLv3 or later
+Contributors: qlstudio  
+Tags: acf, advanced custom field, number, slider, slide, select, integer  
+Requires at least: 4.0.0  
+Tested up to: 5.5.3  
+Stable tag: 0.5.7  
+License: GPLv3 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Number Slider field for Advanced Custom Fields
@@ -59,6 +59,10 @@ Each Number Slider can be configured with the following parameters:
 * Initial version
 
 == Changelog ==
+
+= 0.5.7 =
+
+* Added append value to return string
 
 = 0.5.6 = 
 

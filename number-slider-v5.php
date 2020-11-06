@@ -50,6 +50,7 @@ class acf_field_number_slider extends acf_field {
 			'slider_max_value' => 100,
 			'increment_value' => 1,
 			'slider_units' => "%",
+			'slider_append' => "",
 			'default_value' => 0,
 		);
 		
@@ -110,7 +111,6 @@ class acf_field_number_slider extends acf_field {
 			'type'			=> 'number',
 			'name'			=> 'default_value',
 		));
-
 		
 		acf_render_field_setting( $field, array(
 			'label'			=> __('Minimum Value','acf-number_slider'),
@@ -131,6 +131,13 @@ class acf_field_number_slider extends acf_field {
 			'instructions'	=> __('Enter the value to increment by','acf-number_slider'),
 			'type'			=> 'number',
 			'name'			=> 'increment_value',
+		));
+
+		acf_render_field_setting( $field, array(
+			'label'			=> __('Append','acf-number_slider'),
+			'instructions'	=> __('Appears after the input','acf-number_slider'),
+			'type'			=> 'text',
+			'name'			=> 'slider_append',
 		));
 		
 
@@ -154,9 +161,6 @@ class acf_field_number_slider extends acf_field {
 	*/
 	
 	function render_field( $field ) {
-		
-		
-	 	// create a random ID ## 
             
 		$default = ( intval($field['default_value'] ) < intval($field['slider_min_value'] ) ) ? intval($field['default_value']) : intval($field['slider_min_value']);
 					
@@ -165,7 +169,7 @@ class acf_field_number_slider extends acf_field {
 ?>
 		<input type="text" value="<?php echo $value; ?>" name="<?php echo $field['name'] ?> " class="simple_slider" title="<?php echo $field['label'] ?>" data-slider="true" data-slider-highlight="true" data-slider-range="<?php echo $field['slider_min_value'] ?>,<?php echo $field['slider_max_value']; ?>" data-slider-step="<?php echo $field['increment_value']; ?>" data-slider-snap="true" data-units="<?php echo $field['slider_units']; ?>"/>
 		
-		<p class="description slide"><?php echo $value; ?><?php echo $field['slider_units']; ?></p>
+		<p class="description slide"><?php echo $value; ?> <?php echo $field['slider_units']; ?></p>
 	
 <?php
             
@@ -190,25 +194,13 @@ class acf_field_number_slider extends acf_field {
 	
 	function input_admin_enqueue_scripts() {
 		
+		// get plugin directory ##
 		$dir = plugin_dir_url( __FILE__ );
 		
-		/*
-	
-		// register & include JS
-		wp_register_script( 'acf-input-number_slider', "{$dir}js/input.js" );
-		wp_enqueue_script('acf-input-number_slider');
-		
-		
-		// register & include CSS
-		wp_register_style( 'acf-input-number_slider', "{$dir}css/input.css" ); 
-		wp_enqueue_style('acf-input-number_slider');
-		*/
-		
-		
-	  // add JS ##
+	  	// add ACF JS ##
 	  	wp_enqueue_script( 'ss-input', $dir . 'js/input.js', array( 'jquery' ), $this->version, false );
 	  	
-
+		// add simple slider ##
         wp_enqueue_script( 'jquery-simple-slider', $dir . 'js/simple-slider.js', array( 'jquery' ), $this->version, false );
 
         // add CSS ##
@@ -216,130 +208,6 @@ class acf_field_number_slider extends acf_field {
 
 		
 	}
-	
-	
-	
-	/*
-	*  input_admin_head()
-	*
-	*  This action is called in the admin_head action on the edit screen where your field is created.
-	*  Use this action to add CSS and JavaScript to assist your render_field() action.
-	*
-	*  @type	action (admin_head)
-	*  @since	3.6
-	*  @date	23/01/13
-	*
-	*  @param	n/a
-	*  @return	n/a
-	*/
-
-	/*
-		
-	function input_admin_head() {
-	
-		
-		
-	}
-	
-	*/
-	
-	
-	/*
-   	*  input_form_data()
-   	*
-   	*  This function is called once on the 'input' page between the head and footer
-   	*  There are 2 situations where ACF did not load during the 'acf/input_admin_enqueue_scripts' and 
-   	*  'acf/input_admin_head' actions because ACF did not know it was going to be used. These situations are
-   	*  seen on comments / user edit forms on the front end. This function will always be called, and includes
-   	*  $args that related to the current screen such as $args['post_id']
-   	*
-   	*  @type	function
-   	*  @date	6/03/2014
-   	*  @since	5.0.0
-   	*
-   	*  @param	$args (array)
-   	*  @return	n/a
-   	*/
-   	
-   	/*
-   	
-   	function input_form_data( $args ) {
-	   	
-		
-	
-   	}
-   	
-   	*/
-	
-	
-	/*
-	*  input_admin_footer()
-	*
-	*  This action is called in the admin_footer action on the edit screen where your field is created.
-	*  Use this action to add CSS and JavaScript to assist your render_field() action.
-	*
-	*  @type	action (admin_footer)
-	*  @since	3.6
-	*  @date	23/01/13
-	*
-	*  @param	n/a
-	*  @return	n/a
-	*/
-
-	/*
-		
-	function input_admin_footer() {
-	
-		
-		
-	}
-	
-	*/
-	
-	
-	/*
-	*  field_group_admin_enqueue_scripts()
-	*
-	*  This action is called in the admin_enqueue_scripts action on the edit screen where your field is edited.
-	*  Use this action to add CSS + JavaScript to assist your render_field_options() action.
-	*
-	*  @type	action (admin_enqueue_scripts)
-	*  @since	3.6
-	*  @date	23/01/13
-	*
-	*  @param	n/a
-	*  @return	n/a
-	*/
-
-	/*
-	
-	function field_group_admin_enqueue_scripts() {
-		
-	}
-	
-	*/
-
-	
-	/*
-	*  field_group_admin_head()
-	*
-	*  This action is called in the admin_head action on the edit screen where your field is edited.
-	*  Use this action to add CSS and JavaScript to assist your render_field_options() action.
-	*
-	*  @type	action (admin_head)
-	*  @since	3.6
-	*  @date	23/01/13
-	*
-	*  @param	n/a
-	*  @return	n/a
-	*/
-	/*
-	
-	function field_group_admin_head() {
-	
-	}
-	
-	*/
 
 
 	/*
@@ -380,10 +248,10 @@ class acf_field_number_slider extends acf_field {
 	*/
 	function update_value( $value, $post_id, $field ) {
 
-            #logger($field['name']);
-            #logger($value);
+		#logger($field['name']);
+		#logger($value);
 
-            return (int)$value;
+		return (int)$value;
 
 	}
 	
@@ -407,80 +275,17 @@ class acf_field_number_slider extends acf_field {
 		
 	
 	function format_value( $value, $post_id, $field ) {
+
+		\willow\core\helper::log( $field );
+
+		// check if we need to append a value ##
+		$append = isset( $field['slider_append'] ) ? $field['slider_append'] : '';
 		
-		 return (int)$value;
+		// kick back value, with append - if set ## 
+		return ( (int)$value ).' '.$append;
+
 	}
 	
-	
-	
-	/*
-	*  validate_value()
-	*
-	*  This filter is used to perform validation on the value prior to saving.
-	*  All values are validated regardless of the field's required setting. This allows you to validate and return
-	*  messages to the user if the value is not correct
-	*
-	*  @type	filter
-	*  @date	11/02/2014
-	*  @since	5.0.0
-	*
-	*  @param	$valid (boolean) validation status based on the value and the field's required setting
-	*  @param	$value (mixed) the $_POST value
-	*  @param	$field (array) the field array holding all the field options
-	*  @param	$input (string) the corresponding input name for $_POST value
-	*  @return	$valid
-	*/
-	
-	/*
-	
-	function validate_value( $valid, $value, $field, $input ){
-		
-		// Basic usage
-		if( $value < $field['custom_minimum_setting'] )
-		{
-			$valid = false;
-		}
-		
-		
-		// Advanced usage
-		if( $value < $field['custom_minimum_setting'] )
-		{
-			$valid = __('The value is too little!','acf-number_slider'),
-		}
-		
-		
-		// return
-		return $valid;
-		
-	}
-	
-	*/
-	
-	
-	/*
-	*  delete_value()
-	*
-	*  This action is fired after a value has been deleted from the db.
-	*  Please note that saving a blank value is treated as an update, not a delete
-	*
-	*  @type	action
-	*  @date	6/03/2014
-	*  @since	5.0.0
-	*
-	*  @param	$post_id (mixed) the $post_id from which the value was deleted
-	*  @param	$key (string) the $meta_key which the value was deleted
-	*  @return	n/a
-	*/
-	
-	/*
-	
-	function delete_value( $post_id, $key ) {
-		
-		
-		
-	}
-	
-	*/
 	
 	
 	/*
@@ -496,63 +301,11 @@ class acf_field_number_slider extends acf_field {
 	*  @return	$field
 	*/
 	
-	/*
-	
 	function load_field( $field ) {
-		
+
 		return $field;
 		
 	}	
-	
-	*/
-	
-	
-	/*
-	*  update_field()
-	*
-	*  This filter is applied to the $field before it is saved to the database
-	*
-	*  @type	filter
-	*  @date	23/01/2013
-	*  @since	3.6.0
-	*
-	*  @param	$field (array) the field array holding all the field options
-	*  @return	$field
-	*/
-	
-	/*
-	
-	function update_field( $field ) {
-		
-		return $field;
-		
-	}	
-	
-	*/
-	
-	
-	/*
-	*  delete_field()
-	*
-	*  This action is fired after a field is deleted from the database
-	*
-	*  @type	action
-	*  @date	11/02/2014
-	*  @since	5.0.0
-	*
-	*  @param	$field (array) the field array holding all the field options
-	*  @return	n/a
-	*/
-	
-	/*
-	
-	function delete_field( $field ) {
-		
-		
-		
-	}	
-	
-	*/
 	
 	
 }
