@@ -3,12 +3,12 @@
 class acf_field_number_slider extends acf_field
 {
 	// vars
-	var $settings       // will hold info such as dir / path
-            , $defaults     // will hold default field options
-            , $domain       // holds the language domain
-            , $lang         // language
-            , $units;       // unit description
-
+	var 
+		$settings       // will hold info such as dir / path
+		, $defaults     // will hold default field options
+		, $domain       // holds the language domain
+		, $lang         // language
+		, $units;       // unit description
         
 	/*
 	*  __construct
@@ -21,28 +21,28 @@ class acf_field_number_slider extends acf_field
 	function __construct()
 	{
                 
-            // vars
-            $this->name = 'number_slider';
-            $this->label = __('Number Slider');
-            $this->category = __( "jQuery", $this->domain ); // Basic, Content, Choice, etc
-            $this->domain = 'acf-number_slider';
-            $this->defaults = array (
-                'label'                 => __( 'Choose a Number', $this->domain )
-               , 'units'                => 'Minutes'
-               , 'min_value'            => '0'
-               , 'max_value'            => '500'
-               , 'increment_value'      => '10'
-            );
+		// vars
+		$this->name = 'number_slider';
+		$this->label = __('Number Slider');
+		$this->category = __( "jQuery", $this->domain ); // Basic, Content, Choice, etc
+		$this->domain = 'acf-number_slider';
+		$this->defaults = array (
+			'label'                 => __( 'Choose a Number', $this->domain )
+			, 'units'                => 'Minutes'
+			, 'min_value'            => '0'
+			, 'max_value'            => '500'
+			, 'increment_value'      => '10'
+		);
 
-            // do not delete!
-            parent::__construct();
+		// do not delete!
+		parent::__construct();
 
-            // settings
-            $this->settings = array(
-                'path'      => apply_filters('acf/helpers/get_path', __FILE__)
-                , 'dir'     => apply_filters('acf/helpers/get_dir', __FILE__)
-                , 'version' => '2.0.9'
-            );
+		// settings
+		$this->settings = array(
+			'path'      => apply_filters('acf/helpers/get_path', __FILE__)
+			, 'dir'     => apply_filters('acf/helpers/get_dir', __FILE__)
+			, 'version' => '2.0.9'
+		);
             
 	}
 
@@ -64,74 +64,72 @@ class acf_field_number_slider extends acf_field
 		$field = array_merge( $this->defaults, $field );
 		$key = $field['name'];
 ?>
-		<tr class="field_option field_option_<?php echo $this->name; ?> slider_units">
-                    <td class="label">
-                        <label><?php _e( "Units", $this->domain ); ?></label>
-                        <p class="description"><?php printf( __("Enter the units to measure by", $this->domain ) );?></p>
-                    </td>
-                    <td>
+		<tr class="field_option field_option_<?php esc_attr_e( $this->name ); ?> slider_units">
+			<td class="label">
+				<label><?php _e( "Units", $this->domain ); ?></label>
+				<p class="description"><?php printf( __("Enter the units to measure by", $this->domain ) );?></p>
+			</td>
+			<td>
 <?php
-                    do_action('acf/create_field', array(
-                        'type'    => 'text'
-                        , 'name'  => 'fields[' . $key . '][units]'
-                        , 'value' => $field['units']
-                    ) );
+				do_action('acf/create_field', array(
+					'type'    => 'text'
+					, 'name'  => 'fields[' . $key . '][units]'
+					, 'value' => $field['units']
+				) );
 
 ?>
-                    </td>
+			</td>
 		</tr>
-		<tr class="field_option field_option_<?php echo $this->name; ?> slider_min_value">
-                    <td class="label">
-                        <label><?php _e( "Minimum Value", $this->domain ); ?></label>
-                        <p class="description"><?php printf( __("Enter the minimum value to allow", $this->domain ) );?></p>
-                    </td>
-                    <td>
+		<tr class="field_option field_option_<?php esc_attr_e( $this->name ); ?> slider_min_value">
+			<td class="label">
+				<label><?php _e( "Minimum Value", $this->domain ); ?></label>
+				<p class="description"><?php printf( __("Enter the minimum value to allow", $this->domain ) );?></p>
+			</td>
+			<td>
 <?php
-                    do_action('acf/create_field', array(
-                        'type'    => 'text'
-                        , 'name'  => 'fields[' . $key . '][min_value]'
-                        , 'value' => $field['min_value']
-                    ) );
+				do_action('acf/create_field', array(
+					'type'    => 'text'
+					, 'name'  => 'fields[' . $key . '][min_value]'
+					, 'value' => $field['min_value']
+				) );
 
 ?>
-                    </td>
+			</td>
 		</tr>
-                <tr class="field_option field_option_<?php echo $this->name; ?> slider_max_value">
-                    <td class="label">
-                        <label><?php _e( "Maximum Value", $this->domain ); ?></label>
-                        <p class="description"><?php printf( __("Enter the maximum value to allow", $this->domain ) );?></p>
-                    </td>
-                    <td>
+		<tr class="field_option field_option_<?php esc_attr_e( $this->name ); ?> slider_max_value">
+			<td class="label">
+				<label><?php _e( "Maximum Value", $this->domain ); ?></label>
+				<p class="description"><?php printf( __("Enter the maximum value to allow", $this->domain ) );?></p>
+			</td>
+			<td>
 <?php
-                    do_action('acf/create_field', array(
-                        'type'    => 'text'
-                        , 'name'  => 'fields[' . $key . '][max_value]'
-                        , 'value' => $field['max_value']
-                    ) );
+				do_action('acf/create_field', array(
+					'type'    => 'text'
+					, 'name'  => 'fields[' . $key . '][max_value]'
+					, 'value' => $field['max_value']
+				) );
 
 ?>
-                    </td>
+			</td>
 		</tr>
-                <tr class="field_option field_option_<?php echo $this->name; ?> slider_increment_value">
-                    <td class="label">
-                        <label><?php _e( "Increment Value", $this->domain ); ?></label>
-                        <p class="description"><?php printf( __("Enter the value to increment by", $this->domain ) );?></p>
-                    </td>
-                    <td>
+		<tr class="field_option field_option_<?php esc_attr_e( $this->name ); ?> slider_increment_value">
+			<td class="label">
+				<label><?php _e( "Increment Value", $this->domain ); ?></label>
+				<p class="description"><?php printf( __("Enter the value to increment by", $this->domain ) );?></p>
+			</td>
+			<td>
 <?php
-                    do_action('acf/create_field', array(
-                        'type'    => 'text'
-                        , 'name'  => 'fields[' . $key . '][increment_value]'
-                        , 'value' => $field['increment_value']
-                    ) );
+				do_action('acf/create_field', array(
+					'type'    => 'text'
+					, 'name'  => 'fields[' . $key . '][increment_value]'
+					, 'value' => $field['increment_value']
+				) );
 
 ?>
-                    </td>
+			</td>
 		</tr>
 <?php
 	}
-
-
 
 	/*
 	*  create_field()
@@ -145,16 +143,16 @@ class acf_field_number_slider extends acf_field
 	*  @date	23/01/13
 	*/
 	function create_field( $field ) 
-        {
-            
-            // create a random ID ## 
-            $this->id = mt_rand( 1, 50 );
-            
-            // echo the field html ##
-            echo '<input type="text" value="' . $field['value'] . '" name="' . $field['name'] . '" class="simple_slider" title="' . $field['label'] . '" data-slider="true" data-slider-id="'.$this->id.'" data-slider-highlight="true" data-slider-range="'.$field['min_value'].','.$field['max_value'].'" data-slider-step="'.$field['increment_value'].'" data-slider-snap="true" />';
-        
-            // for later use ##
-            $this->units = $field['units'];
+	{
+		
+		// create a random ID ## 
+		$this->id = mt_rand( 1, 50 );
+		
+		// echo the field html ##
+		esc_html_e(  '<input type="text" value="' . $field['value'] . '" name="' . $field['name'] . '" class="simple_slider" title="' . $field['label'] . '" data-slider="true" data-slider-id="'.$this->id.'" data-slider-highlight="true" data-slider-range="'.$field['min_value'].','.$field['max_value'].'" data-slider-step="'.$field['increment_value'].'" data-slider-snap="true" />');
+	
+		// for later use ##
+		$this->units = $field['units'];
         
 ?>
 <script>
@@ -213,15 +211,13 @@ jQuery(document).ready( function($) {
 	//function load_field_defaults( $field ) { return $field; }
 	function format_value( $value, $post_id, $field )
 	{
-            return (int)$value;
+		return (int)$value;
 	}
 
-        
 	function format_value_for_api($value, $post_id, $field) 
 	{
-            return (int)$value;
+		return (int)$value;
 	}
-
 
 	/*
 	*  update_value()
@@ -238,11 +234,10 @@ jQuery(document).ready( function($) {
 	*
 	*  @return	$value - the modified value
 	*/
-        function update_value( $value, $post_id, $field ) 
-        {
-            return (int)$value;
-        }
-
+	function update_value( $value, $post_id, $field ) 
+	{
+		return (int)$value;
+	}
         
 	/*
 	*  input_admin_enqueue_scripts()
@@ -257,16 +252,15 @@ jQuery(document).ready( function($) {
          * @link        http://loopj.com/jquery-simple-slider/
 	*/
 	function input_admin_enqueue_scripts() 
-        {
-            
-            // add JS ##
-            wp_enqueue_script( 'jquery-simple-slider', $this->settings['dir'] . 'js/simple-slider.js', array( 'jquery' ), $this->settings['version'], false );
+	{
+		
+		// add JS ##
+		wp_enqueue_script( 'jquery-simple-slider', $this->settings['dir'] . 'js/simple-slider.js', array( 'jquery' ), $this->settings['version'], false );
 
-            // add CSS ##
-            wp_enqueue_style( 'simple-slider', $this->settings['dir'] . 'css/simple-slider.css', '', $this->settings['version'] );
-                
+		// add CSS ##
+		wp_enqueue_style( 'simple-slider', $this->settings['dir'] . 'css/simple-slider.css', '', $this->settings['version'] );
+			
 	}
-
 
 }
 

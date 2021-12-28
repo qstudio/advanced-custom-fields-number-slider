@@ -4,7 +4,6 @@
 
 class acf_field_number_slider extends acf_field {
 	
-	
 	/*
 	*  __construct
 	*
@@ -17,34 +16,26 @@ class acf_field_number_slider extends acf_field {
 	*  @param	n/a
 	*  @return	n/a
 	*/
-	
 	function __construct() {
 		
 		/*
 		*  name (string) Single word, no spaces. Underscores allowed
 		*/
-		
 		$this->name = 'number_slider';
-		
 		
 		/*
 		*  label (string) Multiple words, can include spaces, visible when selecting a field type
 		*/
-		
 		$this->label = __('Number Slider', 'acf-number_slider');
-		
 		
 		/*
 		*  category (string) basic | content | choice | relational | jquery | layout | CUSTOM GROUP NAME
 		*/
-		
 		$this->category = 'jquery';
-		
 		
 		/*
 		*  defaults (array) Array of default settings which are merged into the field object. These are used later in settings
 		*/
-		
 		$this->defaults = array(
 			'slider_min_value'	=> 0,
 			'slider_max_value' => 100,
@@ -54,16 +45,13 @@ class acf_field_number_slider extends acf_field {
 			'default_value' => 0,
 		);
 		
-		
 		/*
 		*  l10n (array) Array of strings that are used in JavaScript. This allows JS strings to be translated in PHP and loaded via:
 		*  var message = acf._e('number_slider', 'error');
 		*/
-		
 		$this->l10n = array(
 			'error'	=> __('Error! Please enter a higher value', 'acf-number_slider'),
 		);
-		
 		
 		$this->version = '2.9';
 				
@@ -71,7 +59,6 @@ class acf_field_number_slider extends acf_field {
     	parent::__construct();
     	
 	}
-	
 	
 	/*
 	*  render_field_settings()
@@ -85,7 +72,6 @@ class acf_field_number_slider extends acf_field {
 	*  @param	$field (array) the $field being edited
 	*  @return	n/a
 	*/
-	
 	function render_field_settings( $field ) {
 		
 		/*
@@ -97,7 +83,6 @@ class acf_field_number_slider extends acf_field {
 		*  More than one setting can be added by copy/paste the above code.
 		*  Please note that you must also have a matching $defaults value for the field name (font_size)
 		*/
-		
 		acf_render_field_setting( $field, array(
 			'label'			=> __('Units','acf-number_slider'),
 			'instructions'	=> __('Enter the units to measure by','acf-number_slider'),
@@ -143,8 +128,6 @@ class acf_field_number_slider extends acf_field {
 
 	}
 	
-	
-	
 	/*
 	*  render_field()
 	*
@@ -159,23 +142,33 @@ class acf_field_number_slider extends acf_field {
 	*  @param	$field (array) the $field being edited
 	*  @return	n/a
 	*/
-	
 	function render_field( $field ) {
             
-		$default = ( intval($field['default_value'] ) < intval($field['slider_min_value'] ) ) ? intval($field['default_value']) : intval($field['slider_min_value']);
+		$default = ( 
+			intval($field['default_value'] ) < intval($field['slider_min_value'] ) ) ? 
+			intval($field['slider_min_value']) : 
+			intval($field['default_value']
+		);
+
+		// \w__log( 'default: '.$default );
+		// \w__log( $field );
 					
-		$value = (isset($field['value'])) ? intval($field['value']) : $default;
+		$value = ( 
+			isset($field['value']) ) && intval($field['value']) >= intval($field['slider_min_value'] )? 
+			intval( $field['value'] ) : 
+			$default;
+
+		// \w__log( $value );
 					
-?>
-		<input type="text" value="<?php echo $value; ?>" name="<?php echo $field['name'] ?> " class="simple_slider" title="<?php echo $field['label'] ?>" data-slider="true" data-slider-highlight="true" data-slider-range="<?php echo $field['slider_min_value'] ?>,<?php echo $field['slider_max_value']; ?>" data-slider-step="<?php echo $field['increment_value']; ?>" data-slider-snap="true" data-units="<?php echo $field['slider_units']; ?>"/>
+		?>
+		<input type="text" value="<?php esc_html_e( $value ); ?>" name="<?php esc_html_e( $field['name'] ); ?> " class="simple_slider" title="<?php esc_html_e( $field['label'] ); ?>" data-slider="true" data-slider-highlight="true" data-slider-range="<?php esc_html_e( $field['slider_min_value'] ); ?>,<?php echo $field['slider_max_value']; ?>" data-slider-step="<?php esc_html_e( $field['increment_value'] ); ?>" data-slider-snap="true" data-units="<?php esc_html_e( $field['slider_units'] ); ?>"/>
 		
-		<p class="description slide"><?php echo $value; ?> <?php echo $field['slider_units']; ?></p>
-	
-<?php
-            
+		<div class="description slide" style="padding: 6px 0 0;">
+			<?php esc_html_e( $value ); ?> <?php esc_html_e( $field['slider_units'] ); ?>
+		</div>
+		<?php
         
 	}
-	
 		
 	/*
 	*  input_admin_enqueue_scripts()
@@ -190,8 +183,6 @@ class acf_field_number_slider extends acf_field {
 	*  @param	n/a
 	*  @return	n/a
 	*/
-
-	
 	function input_admin_enqueue_scripts() {
 		
 		// get plugin directory ##
@@ -205,10 +196,8 @@ class acf_field_number_slider extends acf_field {
 
         // add CSS ##
         wp_enqueue_style( 'simple-slider', $dir . 'css/simple-slider.css', '', $this->version );
-
 		
 	}
-
 
 	/*
 	*  load_value()
@@ -226,11 +215,9 @@ class acf_field_number_slider extends acf_field {
 	*/
 	function load_value( $value, $post_id, $field ) {
 		
-		 return (int)$value;
+		return (int)$value;
 		
 	}
-	
-	
 	
 	/*
 	*  update_value()
@@ -255,8 +242,6 @@ class acf_field_number_slider extends acf_field {
 
 	}
 	
-	
-	
 	/*
 	*  format_value()
 	*
@@ -272,21 +257,17 @@ class acf_field_number_slider extends acf_field {
 	*
 	*  @return	$value (mixed) the modified value
 	*/
-		
-	
 	function format_value( $value, $post_id, $field ) {
 
-		// \willow\core\helper::log( $field );
+		\w__log( $field.' - '.$value );
 
 		// check if we need to append a value ##
-		$append = isset( $field['slider_append'] ) ? $field['slider_append'] : '';
-		
-		// kick back value, with append - if set ## 
-		return ( (int)$value ).' '.$append;
+		$append = isset( $field['slider_append'] ) ? '&nbsp;'.$field['slider_append'] : '&nbsp;';
+
+		// kick back value, with append – if set ##
+		return (int) $value.'&nbsp;'.$append;
 
 	}
-	
-	
 	
 	/*
 	*  load_field()
@@ -300,16 +281,13 @@ class acf_field_number_slider extends acf_field {
 	*  @param	$field (array) the field array holding all the field options
 	*  @return	$field
 	*/
-	
 	function load_field( $field ) {
 
 		return $field;
 		
 	}	
 	
-	
 }
-
 
 // create field
 new acf_field_number_slider();

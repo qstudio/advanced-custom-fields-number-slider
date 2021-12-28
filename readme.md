@@ -3,7 +3,7 @@
 **Tags:** acf, advanced custom field, number, slider, slide, select, integer   
 **Requires at least:** 4.0.0    
 **Tested up to:** 5.5.3  
-**Stable tag:** 0.5.7  
+**Stable tag:** 0.5.8    
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -62,6 +62,10 @@ Each Number Slider can be configured with the following parameters:
 * Initial version
 
 ## Changelog ##
+
+### 0.5.8 ###
+
+* Admin fixes for spacing between value and unit
 
 ### 0.5.7 ###
 

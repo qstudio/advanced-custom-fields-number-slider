@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
 	function initialize_field($el) {
 		var allowedValues, settings, x;
 		var slider = $el.find('.simple_slider');
@@ -6,7 +6,7 @@
 		settings = {};
 		allowedValues = slider.data("slider-values");
 		if (allowedValues) {
-			settings.allowedValues = (function() {
+			settings.allowedValues = (function () {
 				var _i, _len, _ref, _results;
 				_ref = allowedValues.split(",");
 				_results = [];
@@ -36,11 +36,12 @@
 		}
 		slider.simpleSlider(settings);
 		slider.on({
-			'slider:ready': function() {
-				console.log(slider.val());
+			'slider:ready': function () {
+				// console.log(slider.val());
 			},
-			'slider:changed': function(event, data) {
-				slider.next(".description.slide").text(data.value.toFixed(0) + units);
+			'slider:changed': function (event, data) {
+				// console.log(slider.val());
+				slider.next(".description.slide").text(data.value.toFixed(0) + ' ' + units);
 			}
 		});
 	}
@@ -58,11 +59,11 @@
 		 *  @param	$el (jQuery selection) the jQuery element which contains the ACF fields
 		 *  @return	n/a
 		 */
-		acf.add_action('ready append', function($el) {
+		acf.add_action('ready append', function ($el) {
 			// search $el for fields of type 'FIELD_NAME'
 			acf.get_fields({
 				type: 'number_slider'
-			}, $el).each(function() {
+			}, $el).each(function () {
 				initialize_field($(this));
 			});
 		});
@@ -81,9 +82,9 @@
 		 *
 		 *  @return	n/a
 		 */
-		$(document).live('acf/setup_fields', function(e, postbox) {
-			$(postbox).find('.field[data-field_type="number_slider"]').each(function() {
-				console.log($(this));
+		$(document).live('acf/setup_fields', function (e, postbox) {
+			$(postbox).find('.field[data-field_type="number_slider"]').each(function () {
+				// console.log($(this));
 				initialize_field($(this));
 			});
 		});
