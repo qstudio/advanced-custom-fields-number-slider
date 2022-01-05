@@ -150,16 +150,11 @@ class acf_field_number_slider extends acf_field {
 			intval($field['default_value']
 		);
 
-		// \w__log( 'default: '.$default );
-		// \w__log( $field );
-					
 		$value = ( 
 			isset($field['value']) ) && intval($field['value']) >= intval($field['slider_min_value'] )? 
 			intval( $field['value'] ) : 
 			$default;
 
-		// \w__log( $value );
-					
 		?>
 		<input type="text" value="<?php esc_html_e( $value ); ?>" name="<?php esc_html_e( $field['name'] ); ?> " class="simple_slider" title="<?php esc_html_e( $field['label'] ); ?>" data-slider="true" data-slider-highlight="true" data-slider-range="<?php esc_html_e( $field['slider_min_value'] ); ?>,<?php echo $field['slider_max_value']; ?>" data-slider-step="<?php esc_html_e( $field['increment_value'] ); ?>" data-slider-snap="true" data-units="<?php esc_html_e( $field['slider_units'] ); ?>"/>
 		
@@ -258,8 +253,6 @@ class acf_field_number_slider extends acf_field {
 	*  @return	$value (mixed) the modified value
 	*/
 	function format_value( $value, $post_id, $field ) {
-
-		\w__log( $field.' - '.$value );
 
 		// check if we need to append a value ##
 		$append = isset( $field['slider_append'] ) ? '&nbsp;'.$field['slider_append'] : '&nbsp;';

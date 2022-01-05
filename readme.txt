@@ -1,9 +1,9 @@
 === Advanced Custom Fields: Number Slider ===
 Contributors: qlstudio  
 Tags: acf, advanced custom field, number, slider, slide, select, integer  
-Requires at least: 4.0.0  
-Tested up to: 5.5.3  
-Stable tag: 0.5.8  
+Requires at least: 5.0.0  
+Tested up to: 5.8.2  
+Stable tag: 0.5.9  
 License: GPLv3 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,7 +23,7 @@ Please do not use the Wordpress.org forum to report bugs, as we no longer monito
 
 This add-on will work with:
 
-* Advanced Custom Fields version 3, 4 & 5
+* Advanced Custom Fields version 4 & 5
 
 = More Information =
 
@@ -59,6 +59,13 @@ Each Number Slider can be configured with the following parameters:
 * Initial version
 
 == Changelog ==
+
+= 0.5.9 =
+
+* data sanitization and escaping
+* format improvements for value and unit spacing
+* Removed support for ACF version 3
+* WP Version bump
 
 = 0.5.8 =
 
