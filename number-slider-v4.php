@@ -162,7 +162,6 @@ jQuery(document).ready( function($) {
         
         // get slider ID ##
         $slider_id = $(this).data("slider-id");
-        //console.log('slider id: '+$slider_id);
         
         // declare variables ##
         var $el, allowedValues, settings, x, input = $(this);

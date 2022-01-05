@@ -36,11 +36,8 @@
 		}
 		slider.simpleSlider(settings);
 		slider.on({
-			'slider:ready': function () {
-				// console.log(slider.val());
-			},
+			'slider:ready': function () {},
 			'slider:changed': function (event, data) {
-				// console.log(slider.val());
 				slider.next(".description.slide").text(data.value.toFixed(0) + ' ' + units);
 			}
 		});
@@ -84,7 +81,6 @@
 		 */
 		$(document).live('acf/setup_fields', function (e, postbox) {
 			$(postbox).find('.field[data-field_type="number_slider"]').each(function () {
-				// console.log($(this));
 				initialize_field($(this));
 			});
 		});
