@@ -1,0 +1,15 @@
+{
+  "name": "qstudio/acf-number-slider",
+  "description": "Advanced Custom Fields: Number Slider",
+  "license": "GPL-2.0",
+  "authors": [
+    {
+      "name": "Q Studio",
+      "homepage": "http://www.qstudio.us"
+    }
+  ],
+  "type" : "wordpress-plugin",
+  "require" : {
+    "composer/installers" : "~1.0"
+  }
+}
