@@ -26,7 +26,7 @@ class acf_field_number_slider extends acf_field {
 		/*
 		*  label (string) Multiple words, can include spaces, visible when selecting a field type
 		*/
-		$this->label = __('Number Slider', 'acf-number_slider');
+		$this->label = __('Number Slider', 'advanced-custom-fields-number-slider');
 		
 		/*
 		*  category (string) basic | content | choice | relational | jquery | layout | CUSTOM GROUP NAME
@@ -50,7 +50,7 @@ class acf_field_number_slider extends acf_field {
 		*  var message = acf._e('number_slider', 'error');
 		*/
 		$this->l10n = array(
-			'error'	=> __('Error! Please enter a higher value', 'acf-number_slider'),
+			'error'	=> __('Error! Please enter a higher value', 'advanced-custom-fields-number-slider'),
 		);
 		
 		$this->version = '2.9';
@@ -84,43 +84,43 @@ class acf_field_number_slider extends acf_field {
 		*  Please note that you must also have a matching $defaults value for the field name (font_size)
 		*/
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Units','acf-number_slider'),
-			'instructions'	=> __('Enter the units to measure by','acf-number_slider'),
+			'label'			=> __('Units','advanced-custom-fields-number-slider'),
+			'instructions'	=> __('Enter the units to measure by','advanced-custom-fields-number-slider'),
 			'type'			=> 'text',
 			'name'			=> 'slider_units',
 		));
 		
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Default Value','acf-number_slider'),
-			'instructions'	=> __('Enter the default value','acf-number_slider'),
+			'label'			=> __('Default Value','advanced-custom-fields-number-slider'),
+			'instructions'	=> __('Enter the default value','advanced-custom-fields-number-slider'),
 			'type'			=> 'number',
 			'name'			=> 'default_value',
 		));
 		
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Minimum Value','acf-number_slider'),
-			'instructions'	=> __('Enter the minimum value to allow','acf-number_slider'),
+			'label'			=> __('Minimum Value','advanced-custom-fields-number-slider'),
+			'instructions'	=> __('Enter the minimum value to allow','advanced-custom-fields-number-slider'),
 			'type'			=> 'number',
 			'name'			=> 'slider_min_value',
 		));
 		
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Maximum Value','acf-number_slider'),
-			'instructions'	=> __('Enter the maximum value to allow','acf-number_slider'),
+			'label'			=> __('Maximum Value','advanced-custom-fields-number-slider'),
+			'instructions'	=> __('Enter the maximum value to allow','advanced-custom-fields-number-slider'),
 			'type'			=> 'number',
 			'name'			=> 'slider_max_value',
 		));
 		
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Increment Value','acf-number_slider'),
-			'instructions'	=> __('Enter the value to increment by','acf-number_slider'),
+			'label'			=> __('Increment Value','advanced-custom-fields-number-slider'),
+			'instructions'	=> __('Enter the value to increment by','advanced-custom-fields-number-slider'),
 			'type'			=> 'number',
 			'name'			=> 'increment_value',
 		));
 
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Append','acf-number_slider'),
-			'instructions'	=> __('Appears after the input','acf-number_slider'),
+			'label'			=> __('Append','advanced-custom-fields-number-slider'),
+			'instructions'	=> __('Appears after the input','advanced-custom-fields-number-slider'),
 			'type'			=> 'text',
 			'name'			=> 'slider_append',
 		));
