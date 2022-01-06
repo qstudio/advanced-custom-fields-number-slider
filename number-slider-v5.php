@@ -156,10 +156,10 @@ class acf_field_number_slider extends acf_field {
 			$default;
 
 		?>
-		<input type="text" value="<?php esc_html_e( $value ); ?>" name="<?php esc_html_e( $field['name'] ); ?> " class="simple_slider" title="<?php esc_html_e( $field['label'] ); ?>" data-slider="true" data-slider-highlight="true" data-slider-range="<?php esc_html_e( $field['slider_min_value'] ); ?>,<?php echo $field['slider_max_value']; ?>" data-slider-step="<?php esc_html_e( $field['increment_value'] ); ?>" data-slider-snap="true" data-units="<?php esc_html_e( $field['slider_units'] ); ?>"/>
+		<input type="text" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $field['name'] ); ?> " class="simple_slider" title="<?php echo esc_attr( $field['label'] ); ?>" data-slider="true" data-slider-highlight="true" data-slider-range="<?php echo esc_attr( $field['slider_min_value'] ); ?>,<?php echo esc_attr( $field['slider_max_value'] ); ?>" data-slider-step="<?php echo esc_attr( $field['increment_value'] ); ?>" data-slider-snap="true" data-units="<?php echo esc_attr( $field['slider_units'] ); ?>"/>
 		
 		<div class="description slide" style="padding: 6px 0 0;">
-			<?php esc_html_e( $value ); ?> <?php esc_html_e( $field['slider_units'] ); ?>
+			<?php echo esc_html( $value ); ?> <?php echo esc_html( $field['slider_units'] ); ?>
 		</div>
 		<?php
         
