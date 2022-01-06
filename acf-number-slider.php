@@ -28,8 +28,8 @@ class acf_field_number_slider_plugin{
     public function __construct(){
         
         // set text domain
-        $mo_file = trailingslashit( dirname(__FILE__)) . 'lang/' . 'acf-number_slider' . '-' . get_locale() . '.mo';
-        load_textdomain( 'acf-number_slider', $mo_file );
+        $mo_file = trailingslashit( dirname(__FILE__)) . 'lang/' . 'advanced-custom-fields-number-slider' . '-' . get_locale() . '.mo';
+        load_textdomain( 'advanced-custom-fields-number-slider', $mo_file );
 
         // version 4+
         add_action( 'acf/register_fields', array( $this, 'register_fields' ) );

@@ -30,7 +30,7 @@ class acf_field_number_slider extends acf_Field
         // set name / title
         $this->name = 'number_slider';
         $this->title = __('Number Slider');
-        $this->domain = 'acf-number_slider';
+        $this->domain = 'advanced-custom-fields-number-slider';
         $this->defaults = array (
             'label'                 => __( 'Choose a Number', $this->domain )
            , 'units'                => 'Minutes'
