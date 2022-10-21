@@ -64,6 +64,14 @@
 				initialize_field($(this));
 			});
 		});
+		// set value on tab load ##
+		acf.add_action('show_field', function( $field, context ){
+    
+			let $slider = $field.find('.simple_slider');
+
+			$slider.simpleSlider( "setValue", $slider.val() );
+
+		});
 	} else {
 		/*
 		 *  acf/setup_fields (ACF4)
