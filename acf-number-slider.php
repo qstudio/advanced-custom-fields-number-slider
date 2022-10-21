@@ -4,7 +4,7 @@
  * Plugin Name:    		Advanced Custom Fields: Number Slider
  * Plugin URI:     		https://qstudio.us
  * Description:    		Number Slider field for Advanced Custom Fields
- * Version:        		0.5.9
+ * Version:        		0.6.0
  * Author:         		Q Studio
  * Author URI:     		https://qstudio.us
  * License:       	 	GPLv3 or later
@@ -28,8 +28,8 @@ class acf_field_number_slider_plugin{
     public function __construct(){
         
         // set text domain
-        $mo_file = trailingslashit( dirname(__FILE__)) . 'lang/' . 'advanced-custom-fields-number-slider' . '-' . get_locale() . '.mo';
-        load_textdomain( 'advanced-custom-fields-number-slider', $mo_file );
+        $mo_file = trailingslashit( dirname(__FILE__)) . 'lang/' . 'acf-number_slider' . '-' . get_locale() . '.mo';
+        load_textdomain( 'acf-number_slider', $mo_file );
 
         // version 4+
         add_action( 'acf/register_fields', array( $this, 'register_fields' ) );
@@ -42,25 +42,6 @@ class acf_field_number_slider_plugin{
         
     }
 
-    /*
-    *  Init
-    *
-    *  @description:
-    *  @since: 3.6
-    *  @created: 1/04/13
-    */
-	/*
-    public function init(){
-
-        if ( function_exists('register_field') ) {
-            
-            register_field( 'acf_field_number_slider', dirname(__FILE__) . '/number-slider-v3.php' );
-
-        }
-
-    }
-	*/
-	
     /*
     *  register_fields
     *
